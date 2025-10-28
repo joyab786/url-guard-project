@@ -12,6 +12,7 @@ from passlib.context import CryptContext
 from starlette.config import Config
 from starlette.middleware.sessions import SessionMiddleware
 from authlib.integrations.starlette_client import OAuth
+from fastapi.staticfiles import StaticFiles
 
 # Local imports (must not be relative)
 import models
@@ -21,7 +22,7 @@ from database import SessionLocal, engine
 # --- 2. INITIAL SETUP ---
 
 # Create all database tables defined in models.py
-models.Base.metadata.create_all(bind=engine)
+
 
 # Create the FastAPI app instance
 app = FastAPI()
@@ -42,6 +43,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+# This line tells FastAPI to serve all files from the 'static' folder
+# when a URL starts with '/static'
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # --- 4. DATABASE DEPENDENCY ---
 def get_db():

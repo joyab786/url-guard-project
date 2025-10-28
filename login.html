@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - URL Guard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="login_styles.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="logo">
+            URL Guard
+        </div>
+        <nav class="dashboard-nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="login.html">👤 Login</a>
+        </nav>
+    </header>
+
+    <main class="login-container">
+        <div class="login-box">
+            <h1>User Login</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="login-button">Login</button>
+            </form>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+           <a href="http://127.0.0.1:8000/login" class="google-login-button">
+    <img src="https://www.google.com/favicon.ico" alt="Google icon">
+    Login with Google
+</a>
+            <div class="extra-links">
+               <a href="forgot-password.html">Forgot Password?</a>
+                <span>|</span>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+        </main>
+    <script src="login.js"></script>
+    </body>
+</html>
+    </main>
+</body>
+</html>

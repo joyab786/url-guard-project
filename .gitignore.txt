@@ -1,0 +1,13 @@
+# Virtual Environment
+venv/
+
+# Local Database
+users.db
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# IDE/Editor folders
+.vscode/
+.idea/

@@ -1,0 +1,136 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+h1 {
+    font-size: 2rem;
+    color: #1c1e21;
+}
+.subtitle {
+    color: #606770;
+    margin-bottom: 30px;
+}
+#url-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dddfe2;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+#check-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+}
+#check-button:hover {
+    background-color: #166fe5;
+}
+.hidden {
+    display: none;
+}
+#result-container {
+    margin-top: 30px;
+}
+#result-card {
+    padding: 20px;
+    border-radius: 8px;
+    color: #fff;
+}
+#result-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Result styles */
+.safe { background-color: #42b72a; }
+.suspicious { background-color: #f5a623; }
+.dangerous { background-color: #f02849; }
+/* ===== START: ADD THIS CSS ===== */
+.info-section {
+    margin-top: 40px;
+    border-top: 1px solid #dddfe2;
+    padding-top: 20px;
+}
+
+.info-button {
+    display: inline-block;
+    background-color: #f5a623;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.info-button:hover {
+    background-color: #d88e17;
+}
+/* ===== START: ADD THIS CSS ===== */
+
+/* Adjust body to accommodate the header */
+body {
+    /* Change flex alignment to start from the top */
+    align-items: flex-start; 
+    padding-top: 80px; /* Add padding to prevent content from hiding under the fixed header */
+}
+
+/* Header Styling */
+.dashboard-header {
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0 40px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    position: fixed; /* Make header stick to the top */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1877f2;
+}
+
+.dashboard-nav a {
+    color: #606770;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 25px;
+    font-size: 1rem;
+    transition: color 0.2s;
+}
+
+.dashboard-nav a:hover {
+    color: #1877f2;
+}
+
+/* ===== END: ADD THIS CSS ===== */

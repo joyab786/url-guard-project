@@ -3,7 +3,7 @@
 # --- 1. ALL IMPORTS AT THE TOP ---
 import re
 from fastapi import FastAPI, Request, Depends, HTTPException
-from fastapi.responses import RedirectResponse, FileResponse  # <-- Added FileResponse
+from fastapi.responses import RedirectResponse, FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
@@ -20,9 +20,6 @@ import database
 from database import SessionLocal, engine
 
 # --- 2. INITIAL SETUP ---
-
-# Create all database tables defined in models.py
-
 
 # Create the FastAPI app instance
 app = FastAPI()
@@ -87,9 +84,20 @@ class URLRequest(BaseModel):
 async def read_root():
     """
     This endpoint serves the main index.html file when a user
-    visits the homepage (http://127.0.0.1:8000/)
+    visits the homepage (e.g., https://your-site.onrender.com/)
     """
     return "index.html"
+
+# ===== START: NEW CODE TO FIX 404 ERRORS =====
+@app.get("/{page_name}.html", response_class=FileResponse)
+async def read_html_page(page_name: str):
+    """
+    This single route will serve any file that ends in .html
+    like login.html, signup.html, info.html, etc.
+    """
+    return f"{page_name}.html"
+# ===== END: NEW CODE =====
+
 
 # --- User Registration and Login Endpoints ---
 @app.post("/signup/")

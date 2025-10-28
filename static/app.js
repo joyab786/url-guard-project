@@ -16,8 +16,10 @@ urlForm.addEventListener('submit', async (e) => {
     resultContainer.classList.add('hidden');
 
     try {
-        // NOTE: Make sure your FastAPI server is running at http://127.0.0.1:8000
-        const response = await fetch('http://127.0.0.1:8000/analyze-url/', {
+        // ===== START: ERROR FIX =====
+        // Use a relative path so it works on any server
+        const response = await fetch('/analyze-url/', {
+        // ===== END: ERROR FIX =====
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

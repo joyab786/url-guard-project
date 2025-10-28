@@ -13,7 +13,10 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
     }
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/signup/', {
+        // ===== START: ERROR FIX =====
+        // Use a relative path so it works on any server
+        const response = await fetch('/signup/', {
+        // ===== END: ERROR FIX =====
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ fullname, email, password }),
@@ -25,7 +28,8 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
             alert(data.detail || 'An error occurred.');
         } else {
             alert(data.message);
-            window.location.href = 'login.html'; // Redirect to login page on success
+            // Use a relative path for the redirect
+            window.location.href = '/login.html'; // Redirect to login page on success
         }
     } catch (error) {
         alert('Could not connect to the server.');

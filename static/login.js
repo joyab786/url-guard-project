@@ -10,7 +10,8 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     loginButton.disabled = true;
 
     try {
-        const response = await fetch('http://127.0.0.1:8000/token', {
+        // Use a relative path so it works on any server
+        const response = await fetch('/token', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
@@ -23,8 +24,8 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
             alert(data.detail || 'An unknown error occurred.');
         } else {
             alert('Login successful!');
-            // On successful login, redirect to the main page
-            window.location.href = 'index.html';
+            // Redirect to the main homepage
+            window.location.href = '/';
         }
     } catch (error) {
         console.error('Login error:', error);
